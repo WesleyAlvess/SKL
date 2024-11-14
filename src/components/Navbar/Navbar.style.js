@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
@@ -57,7 +58,7 @@ export const UlContainer = styled.ul`
   }
 `;
 
-export const ContainerItem = styled.div`
+export const ContainerItem = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;
@@ -82,18 +83,20 @@ export const UlSubitens = styled.ul`
   top: 55px;
   left: 0;
 
-  & li {
-    padding: 10px;
-    color: #333;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 7px;
 
-    &:hover {
-      color: #fff;
-      background-color: #4a9cd8;
-    }
+`;
+
+export const LinkSubitens = styled(Link)`
+  padding: 10px;
+  color: #333;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  &:hover {
+    color: #fff;
+    background-color: #4a9cd8;
   }
 `;
 
@@ -127,14 +130,18 @@ export const UlContainerMobile = styled.div`
   gap: 25px;
 
   & span {
+  
+  }
+`;
+
+export const LinkMenu = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
     color: white;
     font-size: 22px;
-  }
-`;
+`
 
 export const ContainerItens = styled.div`
   display: flex;
@@ -161,7 +168,7 @@ export const ContainerSubItens = styled.div`
   color: #ddd;
 `;
 
-export const SubItens = styled.div`
+export const SubItens = styled(Link)`
   display: flex;
   display: flex;
   align-items: center;

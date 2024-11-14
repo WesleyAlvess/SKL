@@ -10,7 +10,8 @@ import Proposito from "../pages/Sobre/Proposito/Proposito";
 import Solucoes from "../pages/Sobre/Solucoes/Solucoes";
 import VisaoAmapa from "../pages/Projetos/VisaoAmapa/VisaoAmapa";
 import PiraMaisVisao from "../pages/Projetos/PiraMaisVisao/PiraMaisVisao";
-import SaudeVascular from "../pages/Projetos/SaudeVascular/Saudevascular";
+import SaudeVascularAmapa from "../pages/Projetos/SaudeVascularAmapa/Saudevascular";
+import VidaVascularVisaoLimeira from "../pages/Projetos/VidaVascularVisaoLimeira/vidaVascularAmapa";
 import Contato from "../pages/Contato/Contato";
 
 const AppRouter = () => {
@@ -22,9 +23,10 @@ const AppRouter = () => {
         <Route path="/sobre/quem-somos" element={<QuemSomos />} />
         <Route path="/sobre/proposito" element={<Proposito />} />
         <Route path="/sobre/solucoes" element={<Solucoes />} />
-        <Route path="/projetos/amapa" element={<VisaoAmapa />} />
+        <Route path="/projetos/visao-amapa" element={<VisaoAmapa />} />
         <Route path="/projetos/pira-mais-visao" element={<PiraMaisVisao />} />
-        <Route path="/projetos/saude-vascular" element={<SaudeVascular />} />
+        <Route path="/projetos/saude-vascular-amapa" element={<SaudeVascularAmapa />} />
+        <Route path="/projetos/vida-vascular-visao-limeira" element={<VidaVascularVisaoLimeira />} />
         <Route path="/contato" element={<Contato />} />
       </Routes>
     </>

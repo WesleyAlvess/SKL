@@ -13,10 +13,12 @@ import {
   ContainerItens,
   ContainerSubItens,
   SubItens,
+  LinkSubitens,
+  LinkMenu,
 } from "./Navbar.style";
 
 // Icons Lucinda
-import { Activity } from "lucide-react";
+import { Activity} from "lucide-react";
 import { SquareChevronRight } from "lucide-react";
 
 // Utils Menu
@@ -37,6 +39,10 @@ const Navbar = () => {
   // Função para abrir o submenu mobile
   const toggleSubMenuMobile = (index) => {
     setSubMenuOpen(subMenuOpen === index ? null : index); // Alterna o estado do submenu
+  };
+
+  const closeMenuMobile = () => {
+    setIsMenuMobileOpen(false)
   }
 
   // Menu Desktop
@@ -92,6 +98,7 @@ const Navbar = () => {
           {/* Menu items */}
           {Menus.map((item, index) => (
             <ContainerItem
+              to={item.link}
               key={item.title}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -103,10 +110,10 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeaveSubmenu}
                 >
                   {item.subMenu.map((subItem) => (
-                    <li key={subItem.title} onClick={handleSubItemClick}>
+                    <LinkSubitens to={subItem.link} key={subItem.title} onClick={handleSubItemClick}>
                       {subItem.icon && <subItem.icon />}
                       {subItem.title}
-                    </li>
+                    </LinkSubitens>
                   ))}
                 </UlSubitens>
               )}
@@ -118,15 +125,18 @@ const Navbar = () => {
         {isMenuMobileOpen && (
           <UlContainerMobile>
             {Menus.map((item, index) => (
-              <ContainerItens 
-              key={item.title}
-              onClick={() => toggleSubMenuMobile(index)}
+              <ContainerItens
+                key={item.title}
+                onClick={() => toggleSubMenuMobile(index)}
               >
-                <span>{item.title}{item.icon && <item.icon />}</span>
+                <LinkMenu to={item.link} onClick={closeMenuMobile}>
+                  {item.title}
+                  {item.icon && <item.icon />}
+                </LinkMenu>
                 {item.subMenu && subMenuOpen == index && (
                   <ContainerSubItens>
                     {item.subMenu.map((subItm) => (
-                      <SubItens key={subItm.title}>
+                      <SubItens to={subItm.link} key={subItm.title} onClick={closeMenuMobile}>
                         {subItm.icon && <subItm.icon />}
                         {subItm.title}
                       </SubItens>

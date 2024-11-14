@@ -1,9 +1,11 @@
 import React from 'react'
 
-const PiraMaisVisão = () => {
+const PiraMaisVisao = () => {
   return (
-    <div>PiraMaisVisão</div>
+    <div>
+      <h1>PiraMaisVisão</h1>
+    </div>
   )
 }
 
-export default PiraMaisVisão
+export default PiraMaisVisao
