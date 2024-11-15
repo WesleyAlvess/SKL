@@ -107,6 +107,13 @@ export const ContainerIconMenuMobile = styled.div`
   display: none;
   cursor: pointer;
   transition: all.5s ease-in-out;
+  outline: none; 
+
+  &:focus {
+    outline: none;
+  }
+
+  -webkit-tap-highlight-color: transparent;
 
   /* Responsivo para telas pequenas (Mobile) */
   @media screen and (max-width: 768px) {
