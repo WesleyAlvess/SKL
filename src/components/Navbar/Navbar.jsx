@@ -129,7 +129,7 @@ const Navbar = () => {
                 key={item.title}
                 onClick={() => toggleSubMenuMobile(index)}
               >
-                <LinkMenu to={item.link} onClick={closeMenuMobile}>
+                <LinkMenu to={item.link} onClick={item.title === "Contato" ? closeMenuMobile : undefined} >
                   {item.title}
                   {item.icon && <item.icon />}
                 </LinkMenu>
