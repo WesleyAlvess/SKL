@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const NavContainer = styled.div`
   width: 100%;
@@ -106,6 +106,7 @@ export const ContainerIconMenuMobile = styled.div`
   right: 50px;
   display: none;
   cursor: pointer;
+  transition: all.5s ease-in-out;
 
   /* Responsivo para telas pequenas (Mobile) */
   @media screen and (max-width: 768px) {
@@ -115,6 +116,15 @@ export const ContainerIconMenuMobile = styled.div`
 
 // Menu mobile
 
+// Define a animação de chacoalhar
+const shakeAnimation = keyframes`
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+`;
+
 export const UlContainerMobile = styled.div`
   position: absolute;
   top: 70px;
@@ -123,15 +133,14 @@ export const UlContainerMobile = styled.div`
   height: 100%;
   background-color: rgba(37, 108, 181, 0.9);
   padding: 15px;
-  transition: all 0.5s;
+  transition: 0.3s ease-in-out;
 
   display: flex;
   flex-direction: column;
   gap: 25px;
 
-  & span {
-  
-  }
+  animation: ${shakeAnimation} .5s ease-in-out;
+
 `;
 
 export const LinkMenu = styled(Link)`
@@ -184,6 +193,6 @@ export const SubItens = styled(Link)`
   }
 
   & svg {
-    color: #fff; /* Ícones terão a cor branca */
+    color: #fff; 
   }
 `;
